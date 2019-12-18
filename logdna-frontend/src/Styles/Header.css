@@ -12,7 +12,7 @@
 
 .App-header {
   background-color: #EEE;
-  height: 75px;
+  height: 78px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -23,4 +23,5 @@
   left: 0;
   right: 0;
   width: 100vw;
+  z-index: 99999;
 }

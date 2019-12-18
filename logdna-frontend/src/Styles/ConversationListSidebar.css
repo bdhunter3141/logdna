@@ -1,0 +1,24 @@
+.Conversation-list-container {
+  background-color: #EEE;
+  padding-top: 0;
+  width: 100%;
+  border-right: solid 1px #DDD;
+}
+
+.conversation {
+  padding: 10px;
+  border-bottom: solid 1px #DDD;
+  height: 125px;
+}
+
+.conversation-title {
+  font-weight: 600;
+  margin-block-end: 0.5em;
+}
+
+.Conversation-list-container p:not(.conversation-title) {
+  margin-block-start: 0.5em;
+  /* text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden; */
+}
