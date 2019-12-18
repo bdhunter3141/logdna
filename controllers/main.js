@@ -10,7 +10,7 @@ const getMessageData = (req, res, db) => {
     .catch(err => res.status(400).json({dbError: 'Database Error'}))
 }
 
-const postMessageData = (req, res, db) {
+const postMessageData = (req, res, db) => {
   const {message} = req.body
   db('messages').insert({message})
     .returning('*')

@@ -28,10 +28,10 @@ if (process.env.NODE_ENV === 'development') {
   db = require('knex')({
     client: 'pg',
     connection: {
-      host: '127.0.0.1',
-      user: '',
-      password: '',
-      database: 'logdna'
+      host: process.env.DATABASE_HOST,
+      user: process.env.DATABASE_USER,
+      password: process.env.DATABASE_PASSWORD,
+      database: process.env.DATABASE_NAME
     }
   })
 }
