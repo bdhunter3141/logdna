@@ -8,17 +8,40 @@
 .conversation {
   padding: 10px;
   border-bottom: solid 1px #DDD;
-  height: 125px;
+  height: 135px;
+  position: relative;
+}
+
+.conversation:hover {
+  background-color: rgba(219, 21, 91, 0.1);
+  cursor: pointer;
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid #fff;
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(1px, -50%);
+}
+
+.selected .triangle {
+  display: block;
 }
 
 .conversation-title {
   font-weight: 600;
   margin-block-end: 0.5em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .Conversation-list-container p:not(.conversation-title) {
   margin-block-start: 0.5em;
-  /* text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden; */
 }

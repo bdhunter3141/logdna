@@ -17,6 +17,15 @@
   font-weight: 500;
 }
 
+.Group-tile:hover {
+  cursor: pointer;
+  color: #DB155B;
+}
+
+.Group-tile:hover div {
+  background-color: #DB155B;
+}
+
 .Group-tile>div {
   border-radius: 5px;
   background-color: #fff;
