@@ -19,11 +19,11 @@
 
 .Group-tile:hover {
   cursor: pointer;
-  color: #DB155B;
+  color: #ddd;
 }
 
 .Group-tile:hover div {
-  background-color: #DB155B;
+  background-color: #ddd;
 }
 
 .Group-tile>div {
