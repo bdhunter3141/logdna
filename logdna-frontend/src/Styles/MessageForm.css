@@ -1,0 +1,12 @@
+.Message-form-container {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background: #eee;
+  height: 75px;
+  width: 70%;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
