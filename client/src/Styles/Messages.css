@@ -1,0 +1,17 @@
+.Messages-container {
+  margin: 110px 30px 105px calc(30vw + 30px);
+}
+
+.Message-image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+
+.Message-image-placeholder {
+  width: 50%;
+  height: 250px;
+  background-color: #888;
+}
