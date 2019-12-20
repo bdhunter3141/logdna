@@ -27,8 +27,7 @@ class Messages extends React.Component {
 
   addMessageToState = (message) => {
     this.setState(prevState => ({
-      messages: [...prevState.messages, message],
-      errors: [...prevState.errors]
+      messages: [...prevState.messages, message]
     }))
   }
 
@@ -45,7 +44,6 @@ class Messages extends React.Component {
 
   addErrorToState = (error) => {
     this.setState(prevState => ({
-      messages: [...prevState.messages],
       errors: [...prevState.errors, error]
     }))
   }
@@ -54,13 +52,13 @@ class Messages extends React.Component {
     let {messages, errors} = this.state
 
   return (
-    <div className='Messages-container'>
+    <div className='messages-container'>
       <div>
         <h2>Aenan cursus efficitur tellus sed luctus.</h2>
         <h3>Proin sed justo a ligula lobortis suscipit ut vel urna.</h3>
         <p>Aliquam interdum turpis nisl, eu posuere lorem molestie nec. Curabitur dictum ullamcorper nisi id mollis. Sed urna sem, porttitor nec tempor sit amet, lacinia eget lectus. Donec quis felis ultricies, tristique nulla vitae, gravida erat. Suspendisse turpis ligula, varius in faucibus sit amet, egestas non orci. Praesent pretium mi dui, vitae gravida justo viverra nec. Nullam ullamcorper massa tortor, quis placerat nibh rutrum vel. Vivamus blandit ligula lacinia tincidunt vulputate. Proin odio orci, suscipit et fermentum at, tempus et ipsum. Suspendisse egestas ligula vehicula, lacinia leo eget, aliquam ex.</p>
-        <div className='Message-image-container'>
-          <div className='Message-image-placeholder'></div>
+        <div className='message-image-container'>
+          <div className='message-image-placeholder'></div>
           <p className='image-caption'>Aenean ac tincidunt diam.</p>
         </div>
       </div>

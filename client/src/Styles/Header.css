@@ -1,16 +1,16 @@
-.App-logo {
+.app-logo {
   filter: brightness(0) invert(1);
   height: 55px;
   width: 55px;
 }
 
-.App-logo-container {
+.app-logo-container {
   background-color: #DB155B;
   padding: 10px;
   margin-right: 30px;
 }
 
-.App-header {
+.app-header {
   background-color: #EEE;
   height: 78px;
   display: flex;

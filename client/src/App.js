@@ -7,10 +7,10 @@ import ConversationListSidebar from './Components/ConversationListSidebar'
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <Header />
       <Messages />
-      <div className="App-sidebar">
+      <div className="app-sidebar">
         <GroupListSidebar />
         <ConversationListSidebar />
       </div>

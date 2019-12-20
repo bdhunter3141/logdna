@@ -1,4 +1,4 @@
-.Group-tile-container {
+.group-tile-container {
   padding: 10px;
   width: 75px;
   background: #333;
@@ -10,23 +10,23 @@
   height: 100vh;
 }
 
-.Group-tile {
+.group-tile {
   margin: 10px;
   margin-bottom: 5px;
   font-size: 0.9em;
   font-weight: 500;
 }
 
-.Group-tile:hover {
+.group-tile:hover {
   cursor: pointer;
   color: #ddd;
 }
 
-.Group-tile:hover div {
+.group-tile:hover div {
   background-color: #ddd;
 }
 
-.Group-tile>div {
+.group-tile>div {
   border-radius: 5px;
   background-color: #fff;
   width: 50px;

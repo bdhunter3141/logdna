@@ -19,7 +19,7 @@ h3 {
   margin-block-end: 1.5em;
 }
 
-.App-sidebar {
+.app-sidebar {
   display: flex;
   position: fixed;
   left: 0;

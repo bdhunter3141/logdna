@@ -1,8 +1,8 @@
-.Messages-container {
+.messages-container {
   margin: 110px 30px 105px calc(30vw + 30px);
 }
 
-.Message-image-container {
+.message-image-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -11,7 +11,7 @@
   padding-bottom: 0;
 }
 
-.Message-image-placeholder {
+.message-image-placeholder {
   width: 65%;
   height: 225px;
   background-color: #bbb;

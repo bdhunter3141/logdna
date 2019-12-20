@@ -1,4 +1,4 @@
-.Conversation-list-container {
+.conversation-list-container {
   background-color: #EEE;
   padding-top: 0;
   width: 100%;
@@ -42,6 +42,6 @@
   overflow: hidden;
 }
 
-.Conversation-list-container p:not(.conversation-title) {
+.conversation-list-container p:not(.conversation-title) {
   margin-block-start: 0.5em;
 }
