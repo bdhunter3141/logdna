@@ -22,3 +22,20 @@
   font-style: italic;
   margin-block-start: 0.6em;
 }
+
+.error-message-container {
+  position: fixed;
+  bottom: 75px;
+  right: 0;
+  background: rgba(193, 66, 66, 0.35);
+  height: auto;
+  width: 70%;
+  padding: 5px 15px;
+  border-top: solid 1px rgba(193, 66, 66, 0.6);
+  color: rgb(145, 45, 45);
+  font-size: 0.8em;
+}
+
+.error-message-title {
+  font-weight: 600;
+}

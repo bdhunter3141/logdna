@@ -6,7 +6,8 @@ import IndividualMessage from '../Components/IndividualMessage'
 class Messages extends React.Component {
 
   state = {
-    messages: []
+    messages: [],
+    errors: []
   }
 
   componentDidMount() {
@@ -16,18 +17,41 @@ class Messages extends React.Component {
   getMessages = () => {
     fetch(`${process.env.REACT_APP_DATABASE_URL || 'http://localhost:3000'}/messages`)
       .then(res => res.json())
-      .then(messages => this.setState({messages}))
-      .catch(err => console.log(err))
+      .then(messages => {
+        for (let message of messages) {
+          this.addMessageToState(message)
+        }
+      })
+      .catch(err => this.addErrorToState(err))
   }
 
   addMessageToState = (message) => {
     this.setState(prevState => ({
-      messages: [...prevState.messages, message]
+      messages: [...prevState.messages, message],
+      errors: [...prevState.errors]
+    }))
+  }
+
+  displayError = () => {
+    return (
+    <div className="error-message-container">
+      <p className="error-message-title">Sorry, something went wrong:</p>
+    {this.state.errors.map((error, i) => {
+      return (<p className="error-message" key={i}>{error.message}</p>)
+      })}
+    </div>
+    )
+  }
+
+  addErrorToState = (error) => {
+    this.setState(prevState => ({
+      messages: [...prevState.messages],
+      errors: [...prevState.errors, error]
     }))
   }
 
   render() {
-    let {messages} = this.state
+    let {messages, errors} = this.state
 
   return (
     <div className='Messages-container'>
@@ -37,7 +61,7 @@ class Messages extends React.Component {
         <p>Aliquam interdum turpis nisl, eu posuere lorem molestie nec. Curabitur dictum ullamcorper nisi id mollis. Sed urna sem, porttitor nec tempor sit amet, lacinia eget lectus. Donec quis felis ultricies, tristique nulla vitae, gravida erat. Suspendisse turpis ligula, varius in faucibus sit amet, egestas non orci. Praesent pretium mi dui, vitae gravida justo viverra nec. Nullam ullamcorper massa tortor, quis placerat nibh rutrum vel. Vivamus blandit ligula lacinia tincidunt vulputate. Proin odio orci, suscipit et fermentum at, tempus et ipsum. Suspendisse egestas ligula vehicula, lacinia leo eget, aliquam ex.</p>
         <div className='Message-image-container'>
           <div className='Message-image-placeholder'></div>
-          <p className='image-caption'>Image Caption</p>
+          <p className='image-caption'>Aenean ac tincidunt diam.</p>
         </div>
       </div>
       {
@@ -47,8 +71,8 @@ class Messages extends React.Component {
           })
         : null
       }
-
-      <MessageForm addMessageToState={this.addMessageToState} />
+    { errors.length ? this.displayError() : null }
+      <MessageForm addMessageToState={this.addMessageToState} addErrorToState={this.addErrorToState} />
     </div>
   )};
 }

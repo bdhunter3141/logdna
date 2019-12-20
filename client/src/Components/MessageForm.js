@@ -20,9 +20,14 @@ class MessageForm extends React.Component {
         message: this.state.message
       })
     })
-    .then(res => console.log(res))
-    .then(() => this.props.addMessageToState(this.state))
-    .catch(err => console.log(err))
+    .then((res) => {
+      if (res.status === 404) {
+        this.props.addErrorToState({message: 'Server not found.'})
+      }
+      this.props.addMessageToState(this.state)
+    })
+    .then(() => this.setState({message: ''}))
+    .catch(err => this.props.addErrorToState(err))
   }
 
   handleInput = (e) => {
@@ -32,7 +37,7 @@ class MessageForm extends React.Component {
   render() {
   return (
     <form className="Message-form-container" onSubmit={this.handleSubmit}>
-      <input type='text' name='message' placeholder='Message...' onChange={this.handleInput} />
+      <input type='text' name='message' placeholder='Message...' value={this.state.message} onChange={this.handleInput} />
       <button type='submit' value="Submit">Submit</button>
     </form>
   )};
