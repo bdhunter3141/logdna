@@ -4,13 +4,26 @@ import MessageForm from '../Components/MessageForm'
 import IndividualMessage from '../Components/IndividualMessage'
 
 class Messages extends React.Component {
-  
+
   state = {
     messages: []
   }
 
   componentDidMount() {
-    console.log('mounted')
+    this.getMessages()
+  }
+
+  getMessages = () => {
+    fetch(`${process.env.REACT_APP_DATABASE_URL || 'http://localhost:3000'}/messages`)
+      .then(res => res.json())
+      .then(messages => this.setState({messages}))
+      .catch(err => console.log(err))
+  }
+
+  addMessageToState = (message) => {
+    this.setState(prevState => ({
+      messages: [...prevState.messages, message]
+    }))
   }
 
   render() {
@@ -28,14 +41,14 @@ class Messages extends React.Component {
         </div>
       </div>
       {
-        messages.length ? 
+        messages.length ?
           messages.map((message, i) => {
-            return (<IndividualMessage key={i} message={message} />)
-          }) 
+            return (<IndividualMessage key={i} message={message.message} />)
+          })
         : null
       }
-      
-      <MessageForm />
+
+      <MessageForm addMessageToState={this.addMessageToState} />
     </div>
   )};
 }

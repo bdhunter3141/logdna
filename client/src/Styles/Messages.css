@@ -7,11 +7,18 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 30px;
+  padding: 20px;
+  padding-bottom: 0;
 }
 
 .Message-image-placeholder {
-  width: 50%;
-  height: 250px;
-  background-color: #888;
+  width: 65%;
+  height: 225px;
+  background-color: #bbb;
+}
+
+.image-caption {
+  font-size: 0.9em;
+  font-style: italic;
+  margin-block-start: 0.6em;
 }

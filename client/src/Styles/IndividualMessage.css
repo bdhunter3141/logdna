@@ -1,0 +1,13 @@
+.individual-message-container {
+  padding: 5px;
+  margin: 5px;
+}
+
+.message-label {
+  padding: 5px 15px;
+  margin-right: 10px;
+  color: #999;
+  background-color: #eee;
+  display: inline-block;
+  border-radius: 8px;
+}

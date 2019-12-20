@@ -8,7 +8,21 @@ class MessageForm extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    console.log(this.state)
+    if (!this.state.message) {
+      return
+    }
+    fetch(`${process.env.REACT_APP_DATABASE_URL || 'http://localhost:3000'}/messages`, {
+      method: 'post',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        message: this.state.message
+      })
+    })
+    .then(res => console.log(res))
+    .then(() => this.props.addMessageToState(this.state))
+    .catch(err => console.log(err))
   }
 
   handleInput = (e) => {
