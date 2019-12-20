@@ -13,7 +13,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
   ```CREATE TABLE messages (
     id serial PRIMARY KEY,
     message VARCHAR(800)
-  );```
+  );
+  ```
 
 3. Run `npm install` from within the root project directory.
 4. Create a .env file in the root project directory with the following information:
@@ -22,7 +23,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
   DATABASE_HOST=< your chosen database host >
   DATABASE_USER=< your chosen database username >
   DATABASE_PASSWORD=< your chosen database password >
-  DATABASE_NAME=< your chosen database name >```
+  DATABASE_NAME=< your chosen database name >
+  ```
 
 5. Run `npm start` from the root project directory to start the server on port 3000.
 6. Open the client folder from within the root project directory and run `npm install` once again.
