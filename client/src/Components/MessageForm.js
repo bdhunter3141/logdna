@@ -8,9 +8,11 @@ class MessageForm extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
+    // Prevent submitting with no message
     if (!this.state.message) {
       return
     }
+    // Send message to server
     fetch(`${process.env.REACT_APP_DATABASE_URL || 'http://localhost:3000'}/messages`, {
       method: 'post',
       headers: {
@@ -20,12 +22,14 @@ class MessageForm extends React.Component {
         message: this.state.message
       })
     })
+    // Handle 404 response
     .then((res) => {
       if (res.status === 404) {
         this.props.addErrorToState({message: 'Server not found.'})
       }
       this.props.addMessageToState(this.state)
     })
+    // Clear the input
     .then(() => this.setState({message: ''}))
     .catch(err => this.props.addErrorToState(err))
   }

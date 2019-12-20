@@ -14,6 +14,7 @@ class Messages extends React.Component {
     this.getMessages()
   }
 
+  // Fetch messages from server and place in state
   getMessages = () => {
     fetch(`${process.env.REACT_APP_DATABASE_URL || 'http://localhost:3000'}/messages`)
       .then(res => res.json())
@@ -25,12 +26,14 @@ class Messages extends React.Component {
       .catch(err => this.addErrorToState(err))
   }
 
+  // Add a message to the state
   addMessageToState = (message) => {
     this.setState(prevState => ({
       messages: [...prevState.messages, message]
     }))
   }
 
+  // Display an error above the message form
   displayError = () => {
     return (
     <div className="error-message-container">
@@ -42,6 +45,7 @@ class Messages extends React.Component {
     )
   }
 
+  // Add an error to the state
   addErrorToState = (error) => {
     this.setState(prevState => ({
       errors: [...prevState.errors, error]
