@@ -53,6 +53,10 @@ const corsOptions = {
     }
   }
 }
+// Express only serves static assets in production
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
 app.use(helmet())
 app.use(cors(corsOptions))
 app.use(bodyParser.json())
