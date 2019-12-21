@@ -43,7 +43,7 @@ const main = require('./controllers/main')
 const app = express()
 
 // App Middleware
-const whitelist = ['http://localhost:3001']
+const whitelist = ['http://localhost:3001', 'https://warm-citadel-65878.herokuapp.com']
 const corsOptions = {
   origin: (origin, callback) => {
     if (whitelist.indexOf(origin) !== -1 || !origin) {
