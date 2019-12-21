@@ -14,10 +14,11 @@ class Messages extends React.Component {
     this.getMessages()
   }
 
+
   // Fetch messages from server and place in state
   getMessages = () => {
-    console.log('DATABASE URL:', process.env.DATABASE_URL)
-    fetch(`${process.env.DATABASE_URL || 'http://localhost:3000'}/messages`)
+    console.log(process.env.NODE_ENV)
+    fetch(`${'https://warm-citadel-65878.herokuapp.com' || 'http://localhost:3000'}/messages`)
       .then(res => res.json())
       .then(messages => {
         for (let message of messages) {
