@@ -16,7 +16,8 @@ class Messages extends React.Component {
 
   // Fetch messages from server and place in state
   getMessages = () => {
-    fetch(`${process.env.REACT_APP_DATABASE_URL || 'http://localhost:3000'}/messages`)
+    console.log('DATABASE URL:', process.env.DATABASE_URL)
+    fetch(`${process.env.DATABASE_URL || 'http://localhost:3000'}/messages`)
       .then(res => res.json())
       .then(messages => {
         for (let message of messages) {

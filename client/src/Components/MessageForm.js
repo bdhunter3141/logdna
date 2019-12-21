@@ -13,7 +13,7 @@ class MessageForm extends React.Component {
       return
     }
     // Send message to server
-    fetch(`${process.env.REACT_APP_DATABASE_URL || 'http://localhost:3000'}/messages`, {
+    fetch(`${process.env.DATABASE_URL || 'http://localhost:3000'}/messages`, {
       method: 'post',
       headers: {
         'Content-Type': 'application/json'
