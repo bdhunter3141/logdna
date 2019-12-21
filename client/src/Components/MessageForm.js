@@ -13,7 +13,7 @@ class MessageForm extends React.Component {
       return
     }
     // Send message to server
-    fetch(`${process.env.DATABASE_URL || 'http://localhost:3000'}/messages`, {
+    fetch(`${process.env.NODE_ENV === 'production' ? 'https://warm-citadel-65878.herokuapp.com' : 'http://localhost:3000'}/messages`, {
       method: 'post',
       headers: {
         'Content-Type': 'application/json'

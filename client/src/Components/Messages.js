@@ -17,8 +17,7 @@ class Messages extends React.Component {
 
   // Fetch messages from server and place in state
   getMessages = () => {
-    console.log(process.env.NODE_ENV)
-    fetch(`${'https://warm-citadel-65878.herokuapp.com' || 'http://localhost:3000'}/messages`)
+    fetch(`${process.env.NODE_ENV === 'production' ? 'https://warm-citadel-65878.herokuapp.com' : 'http://localhost:3000'}/messages`)
       .then(res => res.json())
       .then(messages => {
         for (let message of messages) {
