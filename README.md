@@ -10,7 +10,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 1. Fork and clone the repository.
 2. Create a local PostgreSQL database and add a table named 'messages'
 
-  ```CREATE TABLE messages (
+  ```
+    CREATE TABLE messages (
     id serial PRIMARY KEY,
     message VARCHAR(800)
   );
@@ -19,7 +20,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 3. Run `npm install` from within the root project directory.
 4. Create a .env file in the root project directory with the following information:
 
- ```NODE_ENV=development
+ ```
+  NODE_ENV=development
   DATABASE_HOST=< your chosen database host >
   DATABASE_USER=< your chosen database username >
   DATABASE_PASSWORD=< your chosen database password >
