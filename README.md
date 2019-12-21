@@ -2,6 +2,8 @@
 
 This is a full-stack application developed to test my React, Express, and PostgreSQL skills. Any messages sent using the message form are stored in a PostgreSQL database and displayed on the screen. The sidebar is not interactive, however, you are able to select a conversation and an indicator will display which conversation is selected.
 
+You can view the completed appication on [Heroku](https://warm-citadel-65878.herokuapp.com/).
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 
